@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @truck.image %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @truck.description %>
+</p>
+
+<p>
+  <strong>Tonnage:</strong>
+  <%= @truck.tonnage %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @truck.rate %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @truck.region %>
+</p>
+
+<p>
+  <strong>Commune:</strong>
+  <%= @truck.commune %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @truck.user %>
+</p>
+
+<p>
+  <strong>Type truck:</strong>
+  <%= @truck.type_truck %>
+</p>
+
+<%= link_to 'Edit', edit_truck_path(@truck) %> |
+<%= link_to 'Back', trucks_path %>
