@@ -11,34 +11,34 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :surname %>
-    <%= form.text_field :surname %>
+    <%= form.text_field :surname, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :phone %>
-    <%= form.number_field :phone %>
+    <%= form.number_field :phone, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :role %>
-    <%= form.text_field :role %>
+    <%= form.select :Role, ['Owner', 'Client'], :class => "form-control"%>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :score %>
-    <%= form.text_field :score %>
+    <%= form.text_field :score, :class => "form-control" %>
   </div>
 
   <div class="actions">
