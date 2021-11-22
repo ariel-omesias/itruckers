@@ -22,13 +22,13 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :tonnage %>
-    <%= form.text_field :tonnage, :class => "form-control" %>
+    <%= form.label :type_truck %>
+    <%= form.select :Type_truck, ['Camión Rígido', 'Camión Articulado', 'Camión de Plataforma Abierta', 'Camión con Lona', 'Camión Frigorífico', 'Camión Cisterna', 'Camión Cerrado', 'Camión Porta-Autos', 'Camión Jaula', 'Camión Contenedor'], :class => "form-control"%>
   </div>
 
   <div class="field form-group">
-    <%= form.label :rate %>
-    <%= form.text_field :rate, :class => "form-control" %>
+    <%= form.label :tonnage %>
+    <%= form.text_field :tonnage, :class => "form-control" %>
   </div>
 
   <div class="field form-group">
@@ -39,6 +39,16 @@
   <div class="field">
     <%= form.label :commune %>
     <%= form.text_field :commune, :class => "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :user %>
+    <%= form.text_field :user, :class => "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :rate %>
+    <%= form.text_field :rate, :class => "form-control" %>
   </div>
 
 
