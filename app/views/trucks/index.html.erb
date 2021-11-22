@@ -27,15 +27,18 @@
         <td><%= truck.region %></td>
         <td><%= truck.commune %></td>
         <td><%= truck.user %></td>
-        <td><%= truck.rate %></td>        
-        <td><%= link_to 'Show', truck %></td>
-        <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-        <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= truck.rate %></td>    
+        <% if user_signed_in? %>    
+          <td><%= link_to 'Show', truck %></td>
+          <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
+          <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Truck', new_truck_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Truck', new_truck_path %>
+<% end %>
