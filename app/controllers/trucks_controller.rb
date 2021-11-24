@@ -21,7 +21,9 @@ class TrucksController < ApplicationController
 
   # POST /trucks or /trucks.json
   def create
-    @truck = Truck.new(truck_params)
+    @truck = Truck.new(truck_params.except(:type_truck))
+    @truck.type_truck = TypeTruck.create(name: params["truck"]["type_truck"])
+    @truck.user_id = current_user.id
 
     respond_to do |format|
       if @truck.save
@@ -64,6 +66,6 @@ class TrucksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def truck_params
-      params.require(:truck).permit(:image, :description, :tonnage, :rate, :region, :commune, :user_id, :type_truck_id)
+      params.require(:truck).permit(:picture, :description, :tonnage, :rate, :region, :commune, :type_truck)
     end
 end

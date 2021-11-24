@@ -30,6 +30,10 @@
         </li>
 
         <% if user_signed_in? %>
+
+        <li class="nav-item">
+          <%= link_to "My User", users_url, :class => 'nav-link' %>
+        </li>
         <li class="nav-item">
           <%= link_to "Create Truck", new_truck_url, :class => 'nav-link' %>
         </li>

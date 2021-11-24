@@ -22,6 +22,7 @@ class AppointmentsController < ApplicationController
   # POST /appointments or /appointments.json
   def create
     @appointment = Appointment.new(appointment_params)
+    @appointment.user_id = current.user.id
 
     respond_to do |format|
       if @appointment.save

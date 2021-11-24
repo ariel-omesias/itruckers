@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field ">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
   </div>
 
   <div class="field form-group">
@@ -23,7 +23,7 @@
 
   <div class="field form-group">
     <%= form.label :type_truck %>
-    <%= form.select :Type_truck, ['Camión Rígido', 'Camión Articulado', 'Camión de Plataforma Abierta', 'Camión con Lona', 'Camión Frigorífico', 'Camión Cisterna', 'Camión Cerrado', 'Camión Porta-Autos', 'Camión Jaula', 'Camión Contenedor'], :class => "form-control"%>
+    <%= form.select :type_truck, ['Camión Rígido', 'Camión Articulado', 'Camión de Plataforma Abierta', 'Camión con Lona', 'Camión Frigorífico', 'Camión Cisterna', 'Camión Cerrado', 'Camión Porta-Autos', 'Camión Jaula', 'Camión Contenedor'], :class => "form-control"%>
   </div>
 
   <div class="field form-group">
@@ -41,10 +41,6 @@
     <%= form.text_field :commune, :class => "form-control" %>
   </div>
 
-  <div class="field form-group">
-    <%= form.label :user %>
-    <%= form.text_field :user, :class => "form-control" %>
-  </div>
 
   <div class="field form-group">
     <%= form.label :rate %>
