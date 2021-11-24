@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_24_192235) do
+ActiveRecord::Schema.define(version: 2021_11_24_230003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,13 +47,6 @@ ActiveRecord::Schema.define(version: 2021_11_24_192235) do
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
-  create_table "scores", force: :cascade do |t|
-    t.integer "rating"
-    t.text "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "trucks", force: :cascade do |t|
     t.string "image"
     t.text "description"
@@ -65,6 +58,13 @@ ActiveRecord::Schema.define(version: 2021_11_24_192235) do
     t.bigint "type_truck_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["type_truck_id"], name: "index_trucks_on_type_truck_id"
     t.index ["user_id"], name: "index_trucks_on_user_id"
   end

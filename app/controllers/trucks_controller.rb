@@ -1,6 +1,8 @@
 class TrucksController < ApplicationController
   before_action :set_truck, only: %i[ show edit update destroy ]
 
+  respond_to :js, :html, :json
+
   # GET /trucks or /trucks.json
   def index
     @trucks = Truck.all
@@ -17,6 +19,17 @@ class TrucksController < ApplicationController
 
   # GET /trucks/1/edit
   def edit
+  end
+
+  def like
+    @truck = Truck.find(params[:id])
+    puts "camion:#{@truck.inspect}}"
+    if params[:format] == 'like'
+      @truck.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @truck.unliked_by current_user
+    end
+    redirect_to root_path
   end
 
   # POST /trucks or /trucks.json
