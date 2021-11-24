@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     has_many :trucks, dependent: :destroy
+    belongs_to :score
 
     validates :name, presence: true
 end
