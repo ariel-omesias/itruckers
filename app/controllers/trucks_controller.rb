@@ -6,6 +6,14 @@ class TrucksController < ApplicationController
   # GET /trucks or /trucks.json
   def index
     @trucks = Truck.all
+    if(params[:search] && !params[:search].empty?)
+    else
+      if signed_in?
+      @trucks = Truck.where("description LIKE ?", "%#{params[:search]}%").order(created_at: :desc)
+    end
+  end
+
+    
   end
 
   # GET /trucks/1 or /trucks/1.json
@@ -51,8 +59,9 @@ class TrucksController < ApplicationController
 
   # PATCH/PUT /trucks/1 or /trucks/1.json
   def update
+    @truck.user_id = current_user.id
     respond_to do |format|
-      if @truck.update(truck_params)
+      if @truck.update(truck_params.except(:type_truck))
         format.html { redirect_to @truck, notice: "Truck was successfully updated." }
         format.json { render :show, status: :ok, location: @truck }
       else
